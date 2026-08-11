@@ -1,11 +1,15 @@
 class student:
-    def __init__(self, Roll_No, name,Gr_No):
+    def __init__(self, Roll_No, name,Gr_No,Marks,Grade):
         self.Roll_No = Roll_No
         self.name = name
         self.Gr_No = Gr_No
+        self.Marks = Marks
+        self.Grade = Grade
 
     def __str__(self):
-        return f"Roll_No: {self.Roll_No} | Name: {self.name} | Gr_No: {self.Gr_No}"
+        return f"Roll_No: {self.Roll_No} | Name: {self.name} | Gr_No: {self.Gr_No} | Marks: {self.Marks} | Grade: {self.Grade}"
+
+    
 
 
 class Management:
@@ -16,13 +20,17 @@ class Management:
         Roll_No=int(input("Enter Roll Number:  "))
         name=input("Enter  Student  Name: ")
         Gr_No=input("Enter GR.No of Student: ")
+        Marks=int(input("Enter Marks of Student: "))
+        Grade=input("Enter Grade of Student: ")
+
+
 
         for record in self.records:
             if record.Roll_No==Roll_No:
                print(" \nStudent already Exists❗ ")
                return 
-        self.records.append(student(Roll_No,name,Gr_No))
-        print("\n--->student added Sucessfully")
+        self.records.append(student(Roll_No,name,Gr_No,Marks,Grade))
+        print("\n--->student added Sucessfully✔")
 
     def display_records(self):
         if not self.records:
