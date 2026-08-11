@@ -134,7 +134,6 @@ A future version can add **file handling or a database** to permanently store st
 
 * ✏️ Update student information
 * 💾 Save records to a `.txt` or `.json` file
-* 📊 Add student marks and grades
 * 🔐 Add login/authentication
 * 🗄️ Use SQLite/MySQL for permanent storage
 * 🎨 Create a GUI version
