@@ -19,17 +19,17 @@ class Management:
 
         for record in self.records:
             if record.Roll_No==Roll_No:
-               print(" Student already Exists ")
+               print(" \nStudent already Exists❗ ")
                return 
         self.records.append(student(Roll_No,name,Gr_No))
-        print("student added Sucessfully ")
+        print("\n--->student added Sucessfully")
 
     def display_records(self):
         if not self.records:
             print("No records available \n")
             return
 
-        print("=======Records========")
+        print("=======Records========\n")
         for record in self.records:
             print(record)
 
@@ -37,22 +37,22 @@ class Management:
         Roll_No=int(input("Enter Roll NO: "))
         for record in self.records:
             if record.Roll_No==Roll_No:
-                print(record)
+                print("\n",record)
                 return 
             
         print("Record Not Found")
         return 
         
     def Delete_std(self):
-        Roll_No=int(input("Enter Roll Number " \
+        Roll_No=int(input("\nEnter Roll Number " \
         "to delete: "))
         for record in self.records:
             if record.Roll_No==Roll_No:
                 self.records.remove(record)
-                print("Record deleted sucessfully")
+                print("\n--->Record deleted sucessfully ✔ ")
                 return
             
-        print("Record not found ")
+        print("Record not found❗")
         return
 
 
@@ -64,7 +64,7 @@ while True:
     print("2. View student")
     print("3. search student")
     print("4. Delete student record")
-    print("5. Exit")
+    print("5. Exit\n")
 
     choice = input("Enter your choice: ")
 
@@ -79,7 +79,9 @@ while True:
     elif choice == "4":
         obj.Delete_std()
     elif choice=="5":
+        print("==============================================")
         print("Thank for using Student management system")
+        print("==============================================")
         break
     else:
-        print("Unknown command")
+        print("Unknown command🥵")
