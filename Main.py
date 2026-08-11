@@ -1,27 +1,27 @@
 class student:
-    def __init__(self, roll, name,gr):
-        self.roll = roll
+    def __init__(self, Roll_No, name,Gr_No):
+        self.Roll_No = Roll_No
         self.name = name
-        self.gr = gr
+        self.Gr_No = Gr_No
 
     def __str__(self):
-        return f"Roll_No: {self.roll} | Name: {self.name} | Gr_No: {self.gr}"
+        return f"Roll_No: {self.Roll_No} | Name: {self.name} | Gr_No: {self.Gr_No}"
 
 
 class Management:
     def __init__(self):
         self.records=[]
 
-    def adding_std(self):
-        roll=int(input("Enter Roll Number:  "))
+    def Add_std(self):
+        Roll_No=int(input("Enter Roll Number:  "))
         name=input("Enter  Student  Name: ")
-        gr=input("Enter GR.No of Student: ")
+        Gr_No=input("Enter GR.No of Student: ")
 
         for record in self.records:
-            if record.roll==roll:
+            if record.Roll_No==Roll_No:
                print(" Student already Exists ")
                return 
-        self.records.append(student(roll,name,gr))
+        self.records.append(student(Roll_No,name,Gr_No))
         print("student added Sucessfully ")
 
     def display_records(self):
@@ -33,20 +33,21 @@ class Management:
         for record in self.records:
             print(record)
 
-    def searching_student(self):
-        roll=int(input("Enter roll NO: "))
+    def Search_student(self):
+        Roll_No=int(input("Enter Roll NO: "))
         for record in self.records:
-            if record.roll==roll:
+            if record.Roll_No==Roll_No:
                 print(record)
                 return 
             
         print("Record Not Found")
         return 
         
-    def deleting_std(self):
-        roll=int(input("Enter roll Number to delete: "))
+    def Delete_std(self):
+        Roll_No=int(input("Enter Roll Number " \
+        "to delete: "))
         for record in self.records:
-            if record.roll==roll:
+            if record.Roll_No==Roll_No:
                 self.records.remove(record)
                 print("Record deleted sucessfully")
                 return
@@ -68,15 +69,15 @@ while True:
     choice = input("Enter your choice: ")
 
     if choice == "1":
-        obj.adding_std()
+        obj.Add_std()
 
     elif choice == "2":
         obj.display_records()
 
     elif choice == "3":
-        obj.searching_student()
+        obj.Search_student()
     elif choice == "4":
-        obj.deleting_std()
+        obj.Delete_std()
     elif choice=="5":
         print("Thank for using Student management system")
         break
